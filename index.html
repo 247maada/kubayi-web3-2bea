@@ -1,52 +1,181 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>M in M — Build Manual Live Version</title>
-<style>
-body{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;background:#f3f4f6;color:#111827;margin:0;padding:20px}
-.container{max-width:920px;margin:24px auto;background:white;padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,.08)}
-h1{margin:0 0 8px 0;font-size:26px}p{color:#374151}.mono{font-family:monospace;background:#f8fafc;padding:8px;border-radius:6px;display:block}.small{font-size:13px;color:#6b7280}footer{margin-top:20px;text-align:center;color:#6b7280;font-size:13px}
-</style></head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>M in M — Build Manual Live Version</title>
+  <style>
+    /* Palette inspired by the cover: warm gold #E3A823, deep brown #4A2E12, soft cream #FFF7EA */
+    :root{
+      --gold:#E3A823;
+      --brown:#4A2E12;
+      --cream:#FFF7EA;
+      --muted:#6b7280;
+    }
+    body{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;background:linear-gradient(180deg,#fff8ec 0%, #fff2d8 50%, #f4e1b1 100%);color:var(--brown);margin:0;padding:0;}
+    .wrap{max-width:1100px;margin:28px auto;padding:20px;}
+    header{display:flex;align-items:center;gap:18px;padding:12px 0}
+    .logo {display:flex;gap:12px;align-items:center;}
+    .logo img{height:64px;border-radius:6px;box-shadow:0 6px 20px rgba(74,46,18,0.12)}
+    h1{font-size:28px;margin:0;color:var(--brown);letter-spacing:0.5px}
+    .tag{color:var(--muted);font-size:13px;margin-top:6px}
+
+    .hero{display:flex;gap:28px;align-items:center;margin-top:16px;background:linear-gradient(180deg, rgba(226,168,35,0.06), rgba(226,168,35,0.03));padding:20px;border-radius:14px;box-shadow:0 8px 30px rgba(15,23,42,0.04)}
+    .cover{flex:0 0 320px}
+    .cover img{width:100%;height:auto;border-radius:8px;display:block;box-shadow:0 12px 30px rgba(74,46,18,0.08)}
+    .hero-content{flex:1}
+    .hero h2{margin:0;font-size:24px;color:var(--brown)}
+    .lead{color:var(--muted);margin:10px 0 18px;font-size:15px;line-height:1.45}
+    .btn{display:inline-block;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:600;cursor:pointer}
+    .btn-primary{background:var(--brown);color:var(--cream);box-shadow:0 8px 18px rgba(74,46,18,0.12)}
+    .btn-outline{border:2px solid var(--brown);color:var(--brown);background:transparent}
+
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:20px;margin-top:22px}
+    .card{background:white;padding:16px;border-radius:12px;box-shadow:0 8px 24px rgba(15,23,42,0.04)}
+    .muted{color:var(--muted);font-size:13px}
+    .mono{font-family:monospace;background:#fffaf0;padding:8px;border-radius:6px;display:block;color:var(--brown);}
+
+    /* Donation hub layout */
+    .donation-list{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+    .don-row{display:flex;align-items:center;justify-content:space-between;padding:10px;border-radius:8px;border:1px dashed rgba(74,46,18,0.08);background:linear-gradient(90deg, rgba(255,250,240,0.6), transparent);}
+
+    footer{margin-top:28px;padding:18px;text-align:center;color:var(--muted);font-size:13px}
+    @media (max-width:900px){
+      .grid{grid-template-columns:1fr; }
+      .cover{flex-basis:220px}
+    }
+  </style>
+</head>
 <body>
-<div class="container">
-<h1>M in M — Build Manual Live Version</h1>
-<p class="small">Author: Lebogang Lesley Kubayi</p>
-<p>This is the live manual checkout page for <strong>The Mine in the Mind</strong>. Payments are handled manually (zero-cost launch): buyers can pay via PayFast, EFT, or Solana. After verification, buyers receive the download link by email.</p>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <!-- Upload cover image to assets/cover.png in repo then the src will load -->
+        <img src="assets/cover.png" alt="The Mine in the Mind cover" />
+        <div>
+          <h1>M in M — Build Manual Live Version</h1>
+          <div class="tag">By Lebogang Lesley Kubayi • A project of BUILD</div>
+        </div>
+      </div>
+      <div style="margin-left:auto;text-align:right">
+        <div style="font-weight:600;color:var(--brown)">Contact</div>
+        <div class="muted">WhatsApp: <a href="https://wa.me/27604827188" style="color:var(--brown);text-decoration:none">+27 60 482 7188</a></div>
+        <div class="muted">Email: <a href="mailto:maadakubayi@gmail.com" style="color:var(--brown);text-decoration:none">maadakubayi@gmail.com</a></div>
+      </div>
+    </header>
 
-<h2>Buy (Manual)</h2>
-<p>Select a format and follow payment instructions below. After payment, send proof (screenshot or transaction ID) to <strong>maadakubayi@gmail.com</strong> or WhatsApp <strong>+27 65 608 6652</strong>.</p>
+    <section class="hero">
+      <div class="cover">
+        <img src="assets/cover.png" alt="Book cover — The Mine in the Mind">
+      </div>
+      <div class="hero-content">
+        <h2>Mine the Mind. Build the Future.</h2>
+        <p class="lead">This book is a tool — every copy helps fund our community projects and supports Tiyani’s future. Start by learning, then consider supporting the BUILD movement.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn btn-primary" href="#buy">Buy / Donate</a>
+          <a class="btn btn-outline" href="#learn">Learning Hub</a>
+        </div>
 
-<label>Format</label>
-<select id="format">
-  <option value="ebook">eBook (PDF) — $10</option>
-  <option value="audiobook">Audiobook (MP3) — $15</option>
-  <option value="bundle">Bundle (eBook + Audiobook) — $20</option>
-  <option value="print">Print Copy (Shipping extra) — $25</option>
-</select>
+        <div style="margin-top:14px" class="muted">Formats: eBook (PDF) • Audiobook (MP3) • Bundle • Print (shipping extra)</div>
+      </div>
+    </section>
 
-<h3>Payment options (choose one)</h3>
-<ol>
-<li><strong>PayFast (South Africa)</strong> — if you have merchant keys, use our PayFast form (admin will confirm). Otherwise pay via EFT and email proof.</li>
-<li><strong>Bank EFT</strong> — Account details on request. Email proof of payment.</li>
-<li><strong>Solana (direct)</strong> — Send SOL to the address below and share the TXID.</li>
-</ol>
+    <div class="grid">
+      <div>
+        <div class="card" id="learn">
+          <h3 style="margin:0">BUILD Learning Hub (teaser)</h3>
+          <p class="muted" style="margin-top:8px">Short lessons on blockchain basics, wallet safety, and beginner steps for making income online. This hub complements the book — it does not reveal the story or replace reading the book.</p>
+          <ul style="margin-top:10px;color:var(--muted)">
+            <li>Intro to blockchain — plain language</li>
+            <li>How to use a wallet (no private keys shared)</li>
+            <li>Small steps to earn online (content + referrals)</li>
+          </ul>
+          <p style="margin-top:12px"><a class="btn btn-outline" href="#hub">Enter Learning Hub</a></p>
+        </div>
 
-<h4>Solana wallet (copy/scan):</h4>
-<p class="mono">G1upaahuPqZ5NT2fWjtmBKwyH55mXdAeSmVycgSFrVeN</p>
+        <div class="card" style="margin-top:16px" id="buy">
+          <h3 style="margin:0">Buy — Manual Flow</h3>
+          <p class="muted" style="margin-top:8px">Zero-cost launch: confirm payment manually. After verification we email the Drive download link.</p>
 
-<h3>After payment</h3>
-<p>Once we verify payment you will receive the download link via email. Download link (Google Drive):</p>
-<a class="mono" href="https://drive.google.com/file/d/1UlRF6sjKCV2278IaYE4tCefangPZ-CI9/view?usp=drivesdk" target="_blank">Download "The Mine in the Mind" (PDF)</a>
+          <label class="muted" style="display:block;margin-top:10px">How to purchase (quick)</label>
+          <ol class="muted">
+            <li>Choose a format on this page.</li>
+            <li>Pay via Solana, Bank EFT, or PayFast (if available).</li>
+            <li>Email proof / TXID to <strong>maadakubayi@gmail.com</strong> or send on WhatsApp <strong>+27 60 482 7188</strong>.</li>
+            <li>Admin verifies & sends the download link by email.</li>
+          </ol>
 
-<h3>Notes for admin (Les / MDI)</h3>
-<ul>
-<li>Verify PayFast notifications or Solana TX in explorer before sending Drive link.</li>
-<li>Log the order in the Google Sheet order log (see docs/order-log.csv).</li>
-<li>For KYC (high-value), ask buyer to complete the Google Form (see docs/KYC-form-fields.txt).</li>
-</ul>
+          <div style="margin-top:10px">
+            <div class="muted">Solana address (copy):</div>
+            <div class="mono">G1upaahuPqZ5NT2fWjtmBKwyH55mXdAeSmVycgSFrVeN</div>
+          </div>
+        </div>
 
-<p class="small">This page is ready to be deployed to Vercel as a static site. See README for full deploy steps.</p>
-<footer>© 2025 Lebogang Lesley Kubayi — The Mine in the Mind</footer>
-</div>
+        <div class="card" style="margin-top:16px" id="hub">
+          <h3 style="margin:0">Support the Vision — Donation Hub</h3>
+          <p class="muted" style="margin-top:8px">If the mission resonates, support BUILD. Donations fund the Learning Hub, community outreach, and the first mining/education projects. Your donation helps us pay for content creation, tools, and KYC verification for beneficiaries.</p>
+
+          <div class="donation-list">
+            <div class="don-row">
+              <div>
+                <strong>PayFast (ZAR)</strong><div class="muted">South African card/EFT</div>
+              </div>
+              <div><a class="btn btn-primary" href="#payfast">Donate ZAR</a></div>
+            </div>
+
+            <div class="don-row">
+              <div>
+                <strong>Solana (crypto)</strong>
+                <div class="muted">Send SOL to our wallet and share TXID via WhatsApp</div>
+              </div>
+              <div style="text-align:right">
+                <div class="mono" style="margin-bottom:6px">G1upaahuPqZ5NT2fWjtmBKwyH55mXdAeSmVycgSFrVeN</div>
+                <div class="muted" style="font-size:12px">Tip: Use Phantom or Solflare to send. Check explorer.solana.com to verify.</div>
+              </div>
+            </div>
+
+            <div class="don-row">
+              <div>
+                <strong>One-time support</strong>
+                <div class="muted">BuyMeACoffee / Ko-fi style (suggested)</div>
+              </div>
+              <div><a class="btn btn-outline" href="https://www.buymeacoffee.com/" target="_blank" rel="noreferrer">Donate</a></div>
+            </div>
+          </div>
+
+          <p class="muted" style="margin-top:12px"><strong>Notes:</strong> For large donations we require KYC before funds are allocated to projects. Use our Google Form to submit documents when asked.</p>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h4 style="margin:0">Quick Actions</h4>
+          <div style="margin-top:10px">
+            <a class="btn btn-primary" href="mailto:maadakubayi@gmail.com">Contact Admin</a>
+          </div>
+
+          <div style="margin-top:12px" class="muted">
+            <strong>Order Log</strong>
+            <div style="margin-top:8px">Admin: record orders in your Google Sheet (docs/order-log.csv)</div>
+          </div>
+
+          <div style="margin-top:14px">
+            <h5 style="margin:0">Community</h5>
+            <p class="muted" style="margin-top:8px">Join BUILD on WhatsApp for updates and early access to masterclasses.</p>
+            <a class="btn btn-outline" href="https://wa.me/27604827188">Open WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h5 style="margin:0">Security</h5>
+          <p class="muted" style="margin-top:8px">We verify crypto transactions on-chain and use manual KYC for large transfers. Never share seed phrases.</p>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <div>© 2025 Lebogang Lesley Kubayi — The Mine in the Mind • BUILD</div>
+    </footer>
+  </div>
 </body>
 </html>

@@ -1,0 +1,10 @@
+KYC Form fields (copy into Google Form):
+- Full name (as on ID)
+- Email
+- Phone number (including country code)
+- Country
+- Upload: ID document (photo of ID or passport)
+- Upload: Selfie holding a handwritten note with name + today's date
+- Upload: Proof of address (utility bill / bank statement) - optional
+- Short question: Purpose of purchase (text)
+- Checkbox: I confirm these documents are authentic and mine.

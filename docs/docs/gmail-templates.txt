@@ -1,0 +1,27 @@
+Purchase confirmation (Gmail template)
+Subject: Your copy of The Mine in the Mind — Thank you!
+
+Hi {{BuyerName}},
+
+Thank you — your purchase is complete. 🎉
+
+Download your copy of "The Mine in the Mind" here:
+https://drive.google.com/file/d/1UlRF6sjKCV2278IaYE4tCefangPZ-CI9/view?usp=drivesdk
+
+If you paid with crypto, your transaction ID is: {{TXID}}.
+If you need help, message us on WhatsApp: +27 65 608 6652
+
+Welcome to BUILD,
+— Lebogang Lesley Kubayi
+
+
+KYC request template
+Subject: BUILD — Please complete identity verification
+
+Hi {{BuyerName}},
+
+To complete this purchase (amount {{Amount}}) we need to verify your identity. Please complete this form and upload the requested documents: <link to Google Form>
+
+Once verified we will send your download link. Thank you for your patience and support.
+
+— BUILD team

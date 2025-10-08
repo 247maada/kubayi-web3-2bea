@@ -1,2 +1,2 @@
-MIT License. Copyright (c) 2025 Lebogang Lesley Kubayi
+MIT License. Copyright (c) 2025 Buildminm 
 Permission is granted to use these files for BUILD project deployment.

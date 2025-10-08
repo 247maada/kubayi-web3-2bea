@@ -46,7 +46,15 @@
     }
   </style>
 </head>
-<body>
+<script>
+if(!localStorage.getItem('buildminm_cookie')) {
+  const bar = document.createElement('div');
+  bar.innerHTML = '<div style="position:fixed;left:0;right:0;bottom:0;background:#fffaf0;padding:12px;text-align:center;border-top:1px solid #eee">We use cookies for analytics. <button id="bm-accept">Accept</button></div>';
+  document.body.appendChild(bar);
+  document.getElementById('bm-accept').onclick = () => { localStorage.setItem('buildminm_cookie','1'); bar.style.display='none'; };
+}
+</script>
+  <body>
   <div class="wrap">
     <header>
       <div class="logo">
